@@ -1,0 +1,55 @@
+/*Header Anpassungen */
+
+/*Logo Größe allgemein auf 60 */
+.header-main{
+  .logo-main{
+    .logo--link{
+      .unitize-height(70, 16);
+    }
+
+    .logo--shop{
+      .unitize-height(60,16);
+    }
+  }
+}
+
+@media screen and (min-width: @tabletViewportWidth) {
+  .header-main {
+    // Logo
+    .logo-main {
+
+      .logo--link {
+        .unitize-height(100, 16);
+      }
+
+      // Smaller logo for mobile viewports
+      .logo--shop {
+        .unitize-height(100, 16);
+      }
+    }
+
+    .shop--navigation{
+      .unitize(padding-top, 30)
+    }
+  }
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+  .navigation--list {
+    // Custom styling cart button
+    .entry--cart {
+      .cart--link {
+        .unitize(padding-left, 30);
+        .cart--amount {
+          display:none;
+        }
+      }
+    }
+
+    .entry--account {
+      .account--link { .unitize(padding-left, 30); }
+    }
+
+    .account--display { display: none;}
+  }
+}

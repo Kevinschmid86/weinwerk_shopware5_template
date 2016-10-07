@@ -1,0 +1,154 @@
+.box--customWeinwerk{
+  .box--content{
+    float:left;
+    width:100%;
+
+    .product--info{
+      .product--image--wrapper{
+
+        width:100%;
+        float:left;
+        .unitize(padding-top, 25);
+
+        .product--price-info{
+          float:left;
+          width:100%;
+          .unitize-margin(10,0,0,0);
+          text-align: center;
+        }
+      }
+
+      .product--info--wrapper {
+        float:left;
+        width:100%;
+
+        .product--description{
+          height:auto;
+
+          .product--description--link{
+            font-weight: normal;
+            color: @text-color-dark;
+
+            &:hover {
+              color: @link-color;
+            }
+          }
+        }
+
+        .product--title{
+          height: auto;
+        }
+
+        .product--additional--information{
+          float:left;
+          width:100%;
+
+          .row{
+            float:left;
+            width:100%;
+
+            label{
+              font-weight:bold;
+              width:30%;
+              float:left;
+            }
+          }
+
+          .product--delivery{
+            float:left;
+            width:100%;
+          }
+        }
+
+        .buying--box{
+          float: left;
+          width: 100%;
+          .unitize-margin(5,0,5,0);
+
+          .buybox--form{
+
+            .buybox--button-container{
+
+              .buybox--quantity{
+
+                float:left;
+                width:100%;
+
+                .js--fancy-select{
+                  width:100%;
+                  float:left;
+                  .unitize-margin(0,0,10,0);
+                }
+              }
+
+              .buybox--button{
+                float:left;
+                width:100%;
+              }
+
+            }
+          }
+        }
+
+        .product--actions{
+          float:left;
+          width:100%;
+          margin:0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: @tabletViewportWidth) {
+  .box--customWeinwerk{
+    .box--content{
+
+      .product--info{
+        .product--image--wrapper{
+          width:40%;
+        }
+
+        .product--info--wrapper{
+          width:60%;
+
+          .product--additional--information{
+
+            .row{
+              label{
+                width:35%;
+              }
+            }
+          }
+
+          .buying--box{
+
+            .buybox--form{
+
+              .buybox--button-container{
+
+                .buybox--quantity{
+
+                  width:30%;
+
+                  .js--fancy-select{
+                    margin:0;
+                  }
+                }
+
+                .buybox--button{
+                  float:right;
+                  width:65%;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}

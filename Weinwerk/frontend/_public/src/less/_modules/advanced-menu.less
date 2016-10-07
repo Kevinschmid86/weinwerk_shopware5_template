@@ -1,0 +1,32 @@
+.advanced-menu {
+
+  border-top: 1px solid @brand-primary;
+
+  .teaser--image {
+    .unitize-height(139);
+  }
+
+  .button-container{
+    padding:0;
+  }
+
+  .item--level-0 {
+    .unitize(padding-bottom, 8);
+  }
+
+  .menu--list-item-link:hover{
+    .unitize-padding(5, 0, 5, 0);
+  }
+
+}
+
+@media screen and (min-width: @desktopViewportWidth) {
+  .advanced-menu {
+
+    width:75%;
+
+    .content--wrapper {
+      .unitize-margin(10, 40, 40, 40);
+    }
+  }
+}
