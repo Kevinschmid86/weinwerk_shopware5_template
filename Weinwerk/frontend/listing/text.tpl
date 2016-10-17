@@ -2,12 +2,14 @@
 
 {* Erweiterung Kategorie Top Bereich damit das Kategoriebild hier nun auch im Frontend ausgegeben wird *}
 {block name="frontend_listing_text_headline" prepend}
-    {* Check if thumbnails exists *}
-    {if isset($sCategoryContent.media.thumbnails)}
-        <div class="hero--mediafile">
-            <img srcset="{$sCategoryContent.media.thumbnails[1].sourceSet}"
-                 alt="{$sCategoryContent.media.description}"
-                 title="{$sCategoryContent.media.description|truncate:160}" />
-        </div>
+    {* Check if thumbnails exists and no banner available *}
+    {if !$sBanner.media.thumbnails}
+        {if isset($sCategoryContent.media.thumbnails)}
+            <div class="hero--mediafile">
+                <img srcset="{$sCategoryContent.media.thumbnails[1].sourceSet}"
+                     alt="{$sCategoryContent.media.description}"
+                     title="{$sCategoryContent.media.description|truncate:160}" />
+            </div>
+        {/if}
     {/if}
 {/block}
