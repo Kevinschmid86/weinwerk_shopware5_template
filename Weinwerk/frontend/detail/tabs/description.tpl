@@ -15,18 +15,10 @@
     </div>
 {/block}
 
-
-{block name='frontend_detail_description_properties' prepend}
-    {* Erzeugerbeschreibung anfügen wenn vorhanden *}
-    {if $sArticle.supplierDescription != ""}
-        <div class="content--title">
-            {s name="wwolffDetailErzeugerDetailBeschreibungsHeader"}Hintergrundinformationen zu Erzeuger "{$sArticle.supplierName|escape}"{/s}
-        </div>
-        <div class="product--description">
-            {$sArticle.supplierDescription}
-        </div>
-    {/if}
-
+{block name='frontend_detail_description_title'}
+    <div class="content--title">
+       {$sArticle.articleName}
+    </div>
 {/block}
 
 {* Properties Nur Land, Gebiet und Jahrgang*}
@@ -34,15 +26,19 @@
     {if $sArticle.sProperties}
         <div class="product--properties panel has--border">
             <table class="product--properties-table">
-                {* Zusätzlich noch den Erzeuger hier mit ausgeben *}
-                {if $sArticle.supplierName && $sArticle.supplierName != "Default"}
+                {* Jahrgang ausgeben vor der eigentlichen Tabelle *}
+                {if $sArticle.attr6}
                     <tr class="product--properties-row">
-                        <td class="product--properties-label is--bold">{s name="wwolffDetailErzeugerLabel"}Erzeuger:{/s}</td>
-                        <td class="product--properties-value">{$sArticle.supplierName|escape}</td>
+                        <td class="product--properties-label is--bold">
+                            {s name="wwolffDetailJahrgangLabel"}Jahrgang:{/s}
+                        </td>
+                        <td class="product--properties-value">
+                            {$sArticle.attr6}
+                        </td>
                     </tr>
                 {/if}
                 {foreach $sArticle.sProperties as $sProperty}
-                    {if $sProperty.name == "Land" || $sProperty.name == "Gebiet" || $sProperty.name == "Jahrgang"}
+                    {if $sProperty.name != "Land" && $sProperty.name != "Gebiet"}
                         <tr class="product--properties-row">
                             {* Property label *}
                             {block name='frontend_detail_description_properties_label'}

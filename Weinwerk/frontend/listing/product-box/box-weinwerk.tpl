@@ -53,11 +53,6 @@
                             {/foreach}
                         {/if}
 
-                        {if $propertyGroup->getname() == "Jahrgang"}
-                            {foreach $propertyGroup->getOptions() as $propertyOption}
-                                {$sJahrgang = $propertyOption->getName()}
-                            {/foreach}
-                        {/if}
 
                         {if $propertyGroup->getname() == "Geschmack"}
                             {foreach $propertyGroup->getOptions() as $propertyOption}
@@ -72,14 +67,14 @@
                    title="{$sArticle.articleName|escapeHtml}">
                     {if $sArticle.attr4}
                         {$sArticle.articleName|truncate:50|escapeHtml} ({$sArticle.attr4})
-                        {if $sJahrgang}
-                             - {$sJahrgang}
+                        {if $sArticle.attr6}
+                             - {$sArticle.attr6}
                         {/if}
                     {else}
                         {$sArticle.articleName|truncate:50|escapeHtml}
 
-                        {if $sJahrgang}
-                            - {$sJahrgang}
+                        {if $sArticle.attr6}
+                            - {$sArticle.attr6}
                         {/if}
                     {/if}
                 </a>
@@ -112,7 +107,13 @@
                     {if $sLand}
                         <div class="row">
                             <label>{s name='wwolffListingHerkunftLabel'}Herkunft:{/s} </label>
-                            <span class="label--information">{$sLand}, {$sGebiet}</span>
+                            {if $sLand && $sGebiet}
+                                <span class="label--information">{$sLand}, {$sGebiet}</span>
+                            {elseif $sLand}
+                                <span class="label--information">{$sLand}</span>
+                            {elseif $sGebiet}
+                                <span class="label--information">{$sGebiet}</span>
+                            {/if}
                         </div>
                     {/if}
 
