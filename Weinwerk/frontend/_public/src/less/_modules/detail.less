@@ -4,4 +4,36 @@
   .product--properties {
     .unitize-margin(10, 0, 10, 0);
   }
+
+  .vendor--properties{
+    width:100%;
+
+    .product--properties-table-vendor{
+        border:1px solid #dadae5;
+    }
+
+    .vendor--image--container{
+      display:none;
+    }
+  }
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+  .product--details {
+
+    .vendor--properties{
+      display:flex;
+      display: -webkit-flex;
+
+      .product--properties-table-vendor{
+        width:50%;
+      }
+
+      .vendor--image--container{
+        width:47%;
+        margin-left:3%;
+        display: block;
+      }
+    }
+  }
 }
