@@ -22,10 +22,23 @@
 @media screen and (min-width: @desktopViewportWidth) {
   .advanced-menu {
 
-    width:75%;
+    width:100%;
+    background:none;
+    box-shadow:none;
+
+    .menu--container{
+      width:75%;
+      background: #fff none repeat scroll 0 0;
+      .box-shadow(0 10px 25px -15px #000);
+    }
+
+    .margin--menu--5, .margin--menu--6, .margin--menu--7, .margin--menu--8{
+      margin-left:25%;
+    }
 
     .content--wrapper {
-      .unitize-margin(10, 8, 40, 8);
+      .unitize-margin(0, 8, 40, 8);
+      .unitize-padding(0,0,15,0);
     }
   }
 }
