@@ -1,0 +1,18 @@
+/*Label Ausgabe innerhalb der Registrierung */
+.register--content {
+  .register--label{
+    display: none;
+  }
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+  .register--content {
+
+    .register--label {
+      .clearfix();
+      .unitize-margin(0, 0, 5, 0);
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
