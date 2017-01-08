@@ -29,6 +29,7 @@ SHOPWARE_EOD;
     }
 
     protected $javascript = array(
-      'src/js/custom-weinwerk.js'
+        'src/js/vendors/js-cookie.js',
+        'src/js/custom-weinwerk.js'
     );
 }
