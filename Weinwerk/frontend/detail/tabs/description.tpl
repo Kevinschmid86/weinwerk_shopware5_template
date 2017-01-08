@@ -47,7 +47,17 @@
 
                             {* Property content *}
                             {block name='frontend_detail_description_properties_content'}
-                                <td class="product--properties-value">{$sProperty.value|escape}</td>
+                                {* Check if Property is Laune and Split Values *}
+                                <td class="product--properties-value">
+                                {if $sProperty.name == "Laune"}
+                                    {assign var="launen" value=","|explode:$sProperty.value}
+                                    {foreach $launen as $laune}
+                                        {$laune} <br/>
+                                    {/foreach}
+                                {else}
+                                    {$sProperty.value|escape}
+                                {/if}
+                                </td>
                             {/block}
                         </tr>
                     {/if}
