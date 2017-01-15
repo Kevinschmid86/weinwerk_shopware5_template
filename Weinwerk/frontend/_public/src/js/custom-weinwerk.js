@@ -8,13 +8,13 @@ if (current_url.search('checkout') > 0)
     if(!Cookies.get('of_agel')) {
         // if not open the modal
         $.modal.open('<div style="padding: 0.5rem;">'+
-            '<p>Wein-Wolff tritt für einen verantwortungsvollen Genuss alkoholischer Getränke ab 18 Jahren ein. Bitte betreten Sie diese Website nicht, wenn Sie jünger als 18 Jahre sind.</p>'+
+            '<p>weinwerk.de tritt für einen verantwortungsvollen Genuss alkoholischer Getränke ein. Ein Erwerb von alkoholhaltigen Getränken darf bei uns nur erfolgen, wenn Sie 18 Jahre oder älter sind. Bitte bestätigen Sie ihr Alter:</p>'+
             '<button class="btn is--primary cookie-ok">Ja, Ich bin 18 Jahre oder älter</button>'+
             '<button class="btn is--secondary cookie-not-ok">Nein, Ich bin noch keine 18 Jahre</button>'+
             '</div>',{
             additionalClass: 'of_age',
             width: 600,
-            height:225,
+            height:230,
             closeOnOverlay: false,
             showCloseButton: false,
         });
@@ -31,7 +31,7 @@ if (current_url.search('checkout') > 0)
 // trigger the function if button is clicked
     $('.of_age .cookie-not-ok').on('click', function() {
         // Set the cookie
-        window.open('http://www.kenn-dein-limit.info/','_self');
+        window.open('http://www.sinalco.de/produkte','_self');
     });
 }
 
