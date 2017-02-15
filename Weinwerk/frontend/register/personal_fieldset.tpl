@@ -85,3 +85,21 @@
                class="register--field password is--required{if isset($error_flags.password)} has--error{/if}" />
     </div>
 {/block}
+
+{* Phone *}
+{block name='frontend_register_personal_fieldset_input_phone'}
+    {if {config name=showPhoneNumberField}}
+        <label class="register--label" for="register_personal_password">
+            {s name='RegisterPlaceholderPhone'}{/s}{s name="labelInfo" namespace="frontend/register/index"}{/s}
+        </label>
+        <div class="register--phone">
+            <input autocomplete="section-personal tel"
+                   name="register[personal][phone]"
+                   type="tel"{if {config name=requirePhoneField}} required="required" aria-required="true"{/if}
+                   placeholder="{s name='RegisterPlaceholderPhone'}{/s}{if {config name=requirePhoneField}}{s name="RequiredField" namespace="frontend/register/index"}{/s}{/if}"
+                   id="phone"
+                   value="{$form_data.phone|escape}"
+                   class="register--field{if {config name=requirePhoneField}} is--required{/if}{if isset($error_flags.phone) && {config name=requirePhoneField}} has--error{/if}" />
+        </div>
+    {/if}
+{/block}

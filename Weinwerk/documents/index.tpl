@@ -1,5 +1,20 @@
 {extends file="parent:documents/index.tpl"}
 
+{* Abteilung noch mit in die Rechnung mitaufgenommen*}
+{block name="document_index_address_base"}
+    {$User.$address.company}<br />
+    {$User.$address.salutation|salutation}
+    {if {config name="displayprofiletitle"}}
+        {$User.$address.title}<br/>
+    {/if}
+    {$User.$address.firstname} {$User.$address.lastname}<br />
+    {* Neu die Abteilung hier miteingebaut *}
+    {if $User.$address.department}
+        {$User.$address.department}<br/>
+    {/if}
+    {$User.$address.street}<br />
+{/block}
+
 {* Anpassung Empfänger - Adresszusatz soll immer ausgegeben werden, auch wenn der nicht im Frontend zur Verfügung steht*}
 {block name="document_index_address_additionalAddressLines"}
     {if $User.$address.additional_address_line1}
