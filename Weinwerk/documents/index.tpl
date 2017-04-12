@@ -54,3 +54,13 @@
         {/if}
     </td>
 {/block}
+
+{* Kommentarfeld über den Betreff mitauswerten *}
+{block name="document_index_head_bottom"}
+    {if $Order._order.attributes.attribute1}
+        <h3>{$Order._order.attributes.attribute1}</h3>
+    {/if}
+
+    {$smarty.block.parent}
+
+{/block}
