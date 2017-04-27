@@ -57,10 +57,13 @@
 
 {* Kommentarfeld über den Betreff mitauswerten *}
 {block name="document_index_head_bottom"}
+
+    <h1>{s name="DocumentIndexInvoiceNumber"}Rechnung Nr. {$Document.id}{/s}</h1>
+
     {if $Order._order.attributes.attribute1}
         <h3>{$Order._order.attributes.attribute1}</h3>
     {/if}
 
-    {$smarty.block.parent}
+    {s name="DocumentIndexPageCounter"}Seite {$page+1} von {$Pages|@count}{/s}
 
 {/block}
