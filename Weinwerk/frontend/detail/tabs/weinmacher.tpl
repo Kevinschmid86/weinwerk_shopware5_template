@@ -34,6 +34,7 @@
                                 <td class="product--properties-value">{$sArticle.supplier_attributes.core->get("supplieraddress")|escape}</td>
                             </tr>
                         {/if}
+
                     </table>
 
                     {* Sofern ein Herstellerbild existiert soll dieses hier ausgegeben werden *}
