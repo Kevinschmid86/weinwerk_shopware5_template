@@ -1,3 +1,4 @@
+{namespace name=backend/viison_pickware_erp_supplier_orders/document}
 {extends file="parent:documents/supplier_order.tpl"}
 
 {block name="document_index_head_articlename"}
