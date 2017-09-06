@@ -15,9 +15,6 @@
     {/block}
     {block name="document_index_head_unit"}<td width="12%" class="head"><strong>{s name=unit}{/s}</strong></td>{/block}
     {block name="document_index_head_amount"}<td align="right" width="8%" class="head"><strong>{s name=quantity}{/s}</strong></td>{/block}
-    {block name="document_index_head_extra_fields"}
-        <td align="right" width="10%" class="head"><strong>{s name=purchasePrice}Einkaufspreis:{/s}</strong></td>
-    {/block}
 {/block}
 
 {* Table content *}
@@ -32,16 +29,5 @@
         {/block}
         {block name="document_index_table_each_unit"}<td>{$position.unit}</td>{/block}
         {block name="document_index_table_each_orderAmount"}<td align="right">{$position.orderAmount}</td>{/block}
-        {block name="document_index_table_each_extra_fields"}
-            <td align="right">
-                {if $currency.symbolOnLeft}
-                    {$currency.symbol}
-                {/if}
-                {$position.article->getArticleDetail()->getPurchasePrice()|replace:".":","}
-                {if !$currency.symbolOnLeft}
-                    {$currency.symbol}
-                {/if}
-            </td>
-        {/block}
     </tr>
 {/block}
