@@ -62,9 +62,11 @@
                     {/foreach}
                 {/if}
 
-                <a href="{$sArticle.linkDetails|rewrite:$sArticle.articleName}"
+                <a href="{$sArticle.linkDetails}"
                    class="product--title"
                    title="{$sArticle.articleName|escapeHtml}">
+                    {$sArticle.articleName|truncate:50|escapeHtml}
+                </a>
                     {if $sArticle.attr4}
                         {$sArticle.articleName|truncate:50|escapeHtml} ({$sArticle.attr4})
                         {if $sArticle.attr6}
@@ -92,9 +94,9 @@
             {* Product description *}
             {block name='frontend_listing_box_article_description'}
                 <div class="product--description">
-                    <a href="{$sArticle.linkDetails|rewrite:$sArticle.articleName}"
-                       class="product--description--link"
-                       title="{$sArticle.articleName|escapeHtml}">
+                        <a href="{$sArticle.linkDetails}"
+                           class="product--description--link"
+                           title="{$sArticle.articleName|escapeHtml}">
 
                         {if $sArticle.description_long}
                             {$sArticle.description_long|strip_tags|truncate:240}
