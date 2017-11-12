@@ -65,8 +65,6 @@
                 <a href="{$sArticle.linkDetails}"
                    class="product--title"
                    title="{$sArticle.articleName|escapeHtml}">
-                    {$sArticle.articleName|truncate:50|escapeHtml}
-                </a>
                     {if $sArticle.attr4}
                         {$sArticle.articleName|truncate:50|escapeHtml} ({$sArticle.attr4})
                         {if $sArticle.attr6}
