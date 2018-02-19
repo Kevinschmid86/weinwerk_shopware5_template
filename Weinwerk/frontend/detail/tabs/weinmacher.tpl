@@ -28,19 +28,23 @@
                             {/if}
                         {/foreach}
 
-                        {if $sArticle.supplier_attributes.core->get("supplieraddress")}
-                            <tr class="product--properties-row">
-                                <td class="product--properties-label is--bold"> {s name='wwolffTabSonstigesErzeugerAdresse'}Erzeuger Adresse:{/s}</td>
-                                <td class="product--properties-value">{$sArticle.supplier_attributes.core->get("supplieraddress")|escape}</td>
-                            </tr>
-                        {/if}
+                        {*Prüfe ob überhaupt Supplier Attribute vorhanden sind *}
+                        {if $sArticle.supplier_attributes.core}
+                            {if $sArticle.supplier_attributes.core->get("supplieraddress")}
+                                <tr class="product--properties-row">
+                                    <td class="product--properties-label is--bold"> {s name='wwolffTabSonstigesErzeugerAdresse'}Erzeuger Adresse:{/s}</td>
+                                    <td class="product--properties-value">{$sArticle.supplier_attributes.core->get("supplieraddress")|escape}</td>
+                                </tr>
+                            {/if}
 
-                        {* Sofern eine Hersteller URL gefüllt ist, diese mit ausgeben *}
-                        {if $sArticle.attributes.kschmidExtendListing->get('supplierLink')}
-                            <tr class="product--properties-row">
-                                <td class="product--properties-label is--bold"> {s name='wwolffTabSonstigesErzeugerLink'}Erzeuger Webseite:{/s}</td>
-                                <td class="product--properties-value"><a href="{$sArticle.attributes.kschmidExtendListing->get('supplierLink')}" title="{s name='wwolffTabSonstigesErzeugerLinkTitle'}Zur Webseite des Erzeugers: {/s}" target="_blank">Zur Webseite von {$sArticle.supplierName}</a></td>
-                            </tr>
+                            {* Sofern eine Hersteller URL gefüllt ist, diese mit ausgeben *}
+                            {if $sArticle.attributes.kschmidExtendListing->get('supplierLink')}
+                                <tr class="product--properties-row">
+                                    <td class="product--properties-label is--bold"> {s name='wwolffTabSonstigesErzeugerLink'}Erzeuger Webseite:{/s}</td>
+                                    <td class="product--properties-value"><a href="{$sArticle.attributes.kschmidExtendListing->get('supplierLink')}" title="{s name='wwolffTabSonstigesErzeugerLinkTitle'}Zur Webseite des Erzeugers: {/s}" target="_blank">Zur Webseite von {$sArticle.supplierName}</a></td>
+                                </tr>
+                            {/if}
+
                         {/if}
 
                     </table>

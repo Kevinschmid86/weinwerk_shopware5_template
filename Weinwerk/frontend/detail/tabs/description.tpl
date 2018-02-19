@@ -38,28 +38,54 @@
                     </tr>
                 {/if}
                 {foreach $sArticle.sProperties as $sProperty}
-                    {if $sProperty.name != "Land" && $sProperty.name != "Gebiet"}
-                        <tr class="product--properties-row">
-                            {* Property label *}
-                            {block name='frontend_detail_description_properties_label'}
-                                <td class="product--properties-label is--bold">{$sProperty.name|escape}:</td>
-                            {/block}
+                    {if $sProperty.groupName == "Nährwerte"}
+                        {if $sProperty.name == "Allergene Stoffe" || $sProperty.name == "Alkoholgehalt in vol.%" || $sProperty.name == "Herkunft"}
+                            <tr class="product--properties-row">
+                                {* Property label *}
+                                {block name='frontend_detail_description_properties_label'}
+                                    <td class="product--properties-label is--bold">{$sProperty.name|escape}:</td>
+                                {/block}
 
-                            {* Property content *}
-                            {block name='frontend_detail_description_properties_content'}
-                                {* Check if Property is Laune and Split Values *}
-                                <td class="product--properties-value">
-                                {if $sProperty.name == "Laune"}
-                                    {assign var="launen" value=","|explode:$sProperty.value}
-                                    {foreach $launen as $laune}
-                                        {$laune} <br/>
-                                    {/foreach}
-                                {else}
-                                    {$sProperty.value|escape}
-                                {/if}
-                                </td>
-                            {/block}
-                        </tr>
+                                {* Property content *}
+                                {block name='frontend_detail_description_properties_content'}
+                                    {* Check if Property is Laune and Split Values *}
+                                    <td class="product--properties-value">
+                                        {if $sProperty.name == "Laune"}
+                                            {assign var="launen" value=","|explode:$sProperty.value}
+                                            {foreach $launen as $laune}
+                                                {$laune} <br/>
+                                            {/foreach}
+                                        {else}
+                                            {$sProperty.value|escape}
+                                        {/if}
+                                    </td>
+                                {/block}
+                            </tr>
+                        {/if}
+                    {else}
+                        {if $sProperty.name != "Land" && $sProperty.name != "Gebiet"}
+                            <tr class="product--properties-row">
+                                {* Property label *}
+                                {block name='frontend_detail_description_properties_label'}
+                                    <td class="product--properties-label is--bold">{$sProperty.name|escape}:</td>
+                                {/block}
+
+                                {* Property content *}
+                                {block name='frontend_detail_description_properties_content'}
+                                    {* Check if Property is Laune and Split Values *}
+                                    <td class="product--properties-value">
+                                        {if $sProperty.name == "Laune"}
+                                            {assign var="launen" value=","|explode:$sProperty.value}
+                                            {foreach $launen as $laune}
+                                                {$laune} <br/>
+                                            {/foreach}
+                                        {else}
+                                            {$sProperty.value|escape}
+                                        {/if}
+                                    </td>
+                                {/block}
+                            </tr>
+                        {/if}
                     {/if}
                 {/foreach}
             </table>
