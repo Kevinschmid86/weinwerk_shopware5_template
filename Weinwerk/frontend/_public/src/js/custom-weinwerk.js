@@ -23,7 +23,7 @@ if (current_url.search('checkout') > 0)
 // trigger the function if button is clicked
     $('.of_age .cookie-ok').on('click', function() {
         // Set the cookie
-        Cookies.set('of_agel', true, { expires: 7 });
+        Cookies.set('of_agel', true);
         // and close the modal
         $.modal.close();
     });
