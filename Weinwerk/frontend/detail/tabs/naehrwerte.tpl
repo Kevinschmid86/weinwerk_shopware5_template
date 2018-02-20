@@ -18,7 +18,7 @@
                 <div class="product--properties panel vendor--properties">
                     <table class="product--properties-table product--properties-table-vendor">
                         {foreach $sArticle.sProperties as $sProperty}
-                            {if $sProperty.name != "Allergene Stoffe" && $sProperty.name != "Alkoholgehalt in vol.%" && $sProperty.name != "Herkunft"}
+                            {if $sProperty.name != "Alkoholgehalt in vol.%" && $sProperty.name != "Herkunft"}
                                 <tr class="product--properties-row">
                                     {* Property label *}
                                     <td class="product--properties-label is--bold">{$sProperty.name|escape}:</td>
